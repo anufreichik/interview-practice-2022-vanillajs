@@ -2,10 +2,6 @@ ul{
     list-style-type: none;
 }
 
-.li-styled{
-    color:gray;
-    padding-left: 5px;
-}
 .div-shadow:nth-child(odd){
     box-shadow: 0px 0px 10px #a8b0a3;
 }

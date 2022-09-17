@@ -73,22 +73,27 @@ let buildTree=(data, collapsable)=>{
     for(let el of data){
         const li = document.createElement('li');
         const elemText = document.createTextNode(el.text);
-
+        if(el.children && el.children.length) {
+            li.innerHTML = '&#43;';
+        }
         li.appendChild(elemText);
 
         if(el.children && el.children.length){
-
+            li.classList.add('clickable');
             let children = buildTree(el.children, true);
-
-
             li.appendChild(children);
+
+
             li.addEventListener('click',function (e) {
                 e.preventDefault();
                 e.stopPropagation();
-                children.classList.toggle('collapsed');
-                console.log(e.target, 'clicked');
+                //console.log(e.target.className)
+                if(e.target.className==='clickable')
+                    children.classList.toggle('collapsed');
             })
         }
+
+
 
         ul.appendChild(li);
     }
