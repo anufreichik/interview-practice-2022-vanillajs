@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 const form = document.querySelector('form');
 const list = document.querySelector('ul');
-
+const done = document.querySelector('h3');
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
     addItem();
@@ -25,6 +25,7 @@ function addItem(){
         check.type = 'checkbox';
         check.addEventListener('change', ()=>{
             li.classList.toggle('done');
+            countDone();
         })
 
         const deleteBtn = document.createElement('button');
@@ -32,6 +33,7 @@ function addItem(){
         deleteBtn.textContent = 'X';
         deleteBtn.addEventListener('click', ()=>{
             list.removeChild(li);
+            countDone();
         })
         li.appendChild(check);
 
@@ -44,4 +46,9 @@ function addItem(){
     }
 
 
+}
+
+function countDone(){
+    const count = list.querySelectorAll('input:checked').length;
+    done.textContent=`${count} Done`;
 }
