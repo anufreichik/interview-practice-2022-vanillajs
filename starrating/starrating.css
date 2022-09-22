@@ -1,0 +1,26 @@
+main{
+    max-width:1180px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stars{
+    display: flex;
+    width:150px;
+    align-items: center;
+    justify-content: space-evenly;
+    margin:20px;
+}
+.star{
+    width:15px;
+    height: 15px;
+    background: gray;
+    transform:rotate(45deg);
+    cursor:pointer;
+}
+.selected-star{
+    background: orange;
+}
