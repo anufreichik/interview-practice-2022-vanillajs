@@ -24,3 +24,6 @@ main{
 .selected-star{
     background: orange;
 }
+.hovered-star{
+    background: orange;
+}
