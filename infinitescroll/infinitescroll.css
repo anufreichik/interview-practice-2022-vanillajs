@@ -1,0 +1,9 @@
+.container{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows:auto;
+    width:900px;
+    margin:auto;
+    gap:10px;
+}
